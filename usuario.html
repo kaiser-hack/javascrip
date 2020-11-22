@@ -4,7 +4,6 @@
     <title>Usuarios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <script type="text/JavaScript" src="dom.js"></script>
   </head>
   <body>
 
@@ -40,28 +39,47 @@
 <br>
 
 
-<button class="btn btn-light align-content-end " onclick="agregar()"   > + Agregar Usuario </button>
-
-<div class="row fila" >
-    <div class = "container" >
-    <div class="col-12  col-sm-10 col-lg-6  ">
+<button class="btn btn-danger align-content-end " onclick="agregar()"   > + Agregar Usuario </button>
 
 <br>
 
-<div class="card tar" style="width: 18rem;">
+<br>
+
+<div class="row fila" >
+    
+
+
+<div class="card tar align-content-start " style="width: 12rem;">
     <img src="img/aquaman.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Usuario</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+    
   </div>
     </div>
     </div>
 </div>
 </div>
+</div>
 
 <script>
+
+function agregar(){
+    let img = ['batman.png', 'daredevil.png', 'hulk.png', 'linterna-verde.png', 'spiderman.png', 'wolverine.png'];
+    let pos = Math.floor( Math.random() * img.length );
+
+    const ruta = 'img/' + img[pos];
+    let row = document.querySelector('.fila');
+    let card = row.querySelector('.tar');
+    let clone = card.cloneNode(true);
+     let imagen = clone.querySelector('img');
+     imagen.src = ruta;
+
+     
+    row.appendChild(clone);
+
+}
   
 </script>
 </body>
